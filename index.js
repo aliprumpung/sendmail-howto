@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 var nodemailer = require("nodemailer");
 var sendmail = require("sendmail");
-app.listen(3000);
+app.listen(process.env.PORT);
 app.get('/',(req,res,next)=>{
    /* sendmail({
      from: 'callmesike@gmail.com', // sender address
