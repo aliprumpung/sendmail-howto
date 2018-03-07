@@ -1,6 +1,38 @@
-
+const express = require('express');
+const app = express();
 var nodemailer = require("nodemailer");
 var sendmail = require("sendmail");
+app.listen(3000);
+app.get('/',(req,res,next)=>{
+   /* sendmail({
+     from: 'callmesike@gmail.com', // sender address
+    to: 'highest_courtesy@yahoo.com', // list of receivers
+    subject: 'Hello',// Subject line
+    text: "Hello world", // plaintext body
+    html: "<b>Hello world?</b>" // html body
+},function(err,rep){
+    if(err){
+      res.status(409).json(err);  
+    }else{
+
+        console.log(rep);
+    console.log("Email has been sent successfully");
+     res.status(200).json(rep);
+    }
+    
+});*/
+
+nodemailer.mail({
+    from: "ALI PRUMPUNG <no-reply@aliprumpung.id>", // sender address
+    to: 'highest_courtesy@yahoo.com', // list of receivers
+    subject: 'Hello'+" ✔",// Subject line
+    text: "Hello world ✔", // plaintext body
+    html: "<b>Hello world?</b>" // html body
+});
+
+    console.log("Email has been sent successfully");
+    res.status(200).json('Email has been sent successfully');
+});
 /*
 const sendMail =nodemailer.createTestAccount((err, account) => {
     // create reusable transporter object using the default SMTP transport
@@ -41,21 +73,5 @@ const sendMail =nodemailer.createTestAccount((err, account) => {
 });*/
 
 // Sending Email Without SMTP
-/*nodemailer.mail({
-    from: "ALI PRUMPUNG <no-reply@aliprumpung.id>", // sender address
-    to: 'highest_courtesy@yahoo.com', // list of receivers
-    subject: 'Hello'+" ✔",// Subject line
-    text: "Hello world ✔", // plaintext body
-    html: "<b>Hello world?</b>" // html body
-});*/
 
-sendmail({
-	 from: 'callmesike@gmail.com', // sender address
-    to: 'highest_courtesy@yahoo.com', // list of receivers
-    subject: 'Hello',// Subject line
-    text: "Hello world", // plaintext body
-    html: "<b>Hello world?</b>" // html body
-},function(err,res){
-	console.log(res);
-	console.log("Email has been sent successfully");
-});
+
