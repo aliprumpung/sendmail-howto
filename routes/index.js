@@ -11,11 +11,11 @@ res.render('index',{title:'Send Email Without smtp'});
 router.post('/sendemail',(req,res,next)=>{
 
 	nodemailer.mail({
-    from: "ALI PRUMPUNG <no-reply@aliprumpung.id>", // sender address
-    to: req.body.emailto, // list of receivers
-    subject: 'Hello'+" ✔",// Subject line
-    text: "Hello world ✔", // plaintext body
-    html: "<b>Hello world?</b>" // html body
+    from: "ALI PRUMPUNG <no-reply@aliprumpung.id>", 
+    to: req.body.emailto, 
+    subject: 'Hello'+" ✔",
+    text: "Hello world ✔", 
+    html: "<b>Hello world?</b>"
 });
 res.redirect('/');
     
