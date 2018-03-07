@@ -9,7 +9,7 @@ res.render('index',{title:'Send Email Without smtp'});
 });
 
 router.post('/sendemail',(req,res,next)=>{
-
+	//run on production mode only
 	nodemailer.mail({
     from: "ALI PRUMPUNG <no-reply@aliprumpung.id>", 
     to: req.body.emailto, 
