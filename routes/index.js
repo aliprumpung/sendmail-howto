@@ -8,7 +8,7 @@ res.render('index',{title:'Send Email Without smtp'});
  
 });
 
-router.post('/',(req,res,next)=>{
+router.post('/sendemail',(req,res,next)=>{
 
 	nodemailer.mail({
     from: "ALI PRUMPUNG <no-reply@aliprumpung.id>", // sender address
@@ -17,9 +17,8 @@ router.post('/',(req,res,next)=>{
     text: "Hello world ✔", // plaintext body
     html: "<b>Hello world?</b>" // html body
 });
-
-    console.log("Email has been sent successfully");
-    res.status(200).json('Email has been sent successfully !!');
+res.redirect('/');
+    
 });
 
 module.exports = router;
